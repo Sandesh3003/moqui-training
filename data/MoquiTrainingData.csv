@@ -1,0 +1,7 @@
+moqui.training.MoquiTraining, sample
+
+trainingId, trainingName, trainingDate, trainingPrice, trainingDuration
+9, Training9, 2023-12-14, 10000, 8
+10, Training10, 2023-12-15, 9000, 10
+11, Training11, 2023-12-16, 6000, 5
+12, Training12, 2023-12-17, 8000, 7
