@@ -4,7 +4,7 @@
         <in-parameters>
             <auto-parameters include="all" entity-name="moqui.training.MoquiTraining"/>
             <parameter name="trainingName" required="true"><text-length max="255" min="3"/> </parameter>
-            <parameter name="trainingDate" required="true"><time-range format="yyyy-MM-dd"/> </parameter>
+            <parameter name="trainingDate" required="true"><time-range format="MM-yyyy"/> </parameter>
             <parameter name="trainingPrice" required="true" default-value="0">
                 <number-decimal/>
             </parameter>
@@ -22,7 +22,7 @@
             <auto-parameters entity-name="moqui.training.MoquiTraining"  include="nonpk"/>
             <parameter name="trainingId" required="true"/>
             <parameter name="trainingName" required="true"><text-length max="255" min="3"/> </parameter>
-            <parameter name="trainingDate" required="true" format="yyyy-MM-dd"/>
+            <parameter name="trainingDate" required="true" format="dd-MM-yyyy"/>
             <parameter name="trainingPrice" required="true" default-value="0">
                 <number-decimal/>
             </parameter>
@@ -34,6 +34,7 @@
             <parameter name="trainingId"/>
         </out-parameters>
         <actions>
+            <log message="=========${trainingDate}=========="/>
             <service-call name="create#moqui.training.MoquiTraining" in-map="context" out-map="context"/>
         </actions>
     </service>
