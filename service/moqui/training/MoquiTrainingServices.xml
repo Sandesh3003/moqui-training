@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
-    <service verb="create" noun="MoquiTraining" type="entity-auto">
+    <service verb="create" noun="MoquiTraining" type="entity-auto" displayName="entity-auto service for creating records">
         <in-parameters>
-            <auto-parameters entity-name="moqui.training.MoquiTraining"/>
+            <auto-parameters include="all" entity-name="moqui.training.MoquiTraining"/>
+            <parameter name="trainingName" required="true"><text-length max="255" min="3"/> </parameter>
+            <parameter name="trainingDate" required="true"><time-range format="yyyy-MM-dd"/> </parameter>
+            <parameter name="trainingPrice" required="true" default-value="0">
+                <number-decimal/>
+            </parameter>
+            <parameter name="trainingDuration" required="true" default-value="0">
+                <number-integer/>
+            </parameter>
         </in-parameters>
         <out-parameters>
             <parameter name="trainingId"/>
         </out-parameters>
     </service>
-    <service verb="create" type="inline" noun="Training">
+
+    <service verb="create" type="inline" displayName="service with default type to create records for the entity" noun="Training">
         <in-parameters>
             <auto-parameters entity-name="moqui.training.MoquiTraining"  include="nonpk"/>
             <parameter name="trainingId" required="true"/>
+            <parameter name="trainingName" required="true"><text-length max="255" min="3"/> </parameter>
+            <parameter name="trainingDate" required="true" format="yyyy-MM-dd"/>
+            <parameter name="trainingPrice" required="true" default-value="0">
+                <number-decimal/>
+            </parameter>
+            <parameter name="trainingDuration" required="true" default-value="0">
+                <number-integer/>
+            </parameter>
         </in-parameters>
         <out-parameters>
             <parameter name="trainingId"/>
@@ -24,6 +41,15 @@
         <in-parameters>
             <auto-parameters entity-name="moqui.training.MoquiTraining" include="nonpk"/>
             <parameter name="trainingId" required="true"/>
+            <parameter name="trainingId" required="true"/>
+            <parameter name="trainingName" required="true"><text-length max="255" min="3"/> </parameter>
+            <parameter name="trainingDate" required="true" format="yyyy-MM-dd"/>
+            <parameter name="trainingPrice" required="true" default-value="0">
+                <number-decimal/>
+            </parameter>
+            <parameter name="trainingDuration" required="true" default-value="0">
+                <number-integer/>
+            </parameter>
         </in-parameters>
         <out-parameters>
             <parameter name="trainingId"/>
