@@ -1,0 +1,27 @@
+[
+  {"_dataType": "sample"},
+  {
+    "_entity": "MoquiTraining",
+    "trainingId" : "6",
+    "trainingName": "Training6",
+    "trainingDate": "2023-12-11",
+    "trainingPrice": "5000",
+    "trainingDuration": "6"
+  },
+  {
+    "_entity": "MoquiTraining",
+    "trainingId" : "7",
+    "trainingName": "Training7",
+    "trainingDate": "2023-12-12",
+    "trainingPrice": "7000",
+    "trainingDuration": "8"
+  },
+  {
+    "_entity": "MoquiTraining",
+    "trainingId" : "8",
+    "trainingName": "Training8",
+    "trainingDate": "2023-12-13",
+    "trainingPrice": "8000",
+    "trainingDuration": "9"
+  }
+]
