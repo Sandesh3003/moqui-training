@@ -111,4 +111,31 @@
             </if>
         </actions>
     </service>
+<!--Assignment 6 services-->
+    <service verb="get" noun="TrainingRecords">
+        <out-parameters>
+            <parameter name="trainingRecordList"/>
+        </out-parameters>
+        <actions>
+            <entity-find entity-name="moqui.training.MoquiTraining" list="trainingRecordList">
+                <select-field field-name="trainingId"/>
+                <select-field field-name="trainingName"/>
+                <select-field field-name="trainingPrice"/>
+            </entity-find>
+        </actions>
+    </service>
+    <service verb="get" noun="TrainingRecordById">
+        <in-parameters>
+            <parameter name="trainingId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="trainingRecordList"/>
+        </out-parameters>
+        <actions>
+            <entity-find entity-name="moqui.training.MoquiTraining" list="trainingRecordList">
+                <econdition field-name="trainingId"/>
+            </entity-find>
+        </actions>
+    </service>
+
 </services>

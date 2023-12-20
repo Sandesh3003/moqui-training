@@ -1,0 +1,40 @@
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://moqui.org/xsd/rest-api-3.xsd"
+          name="Training" displayName="Training Rest API" version="1.0.0">
+<!--    Assignment 6 : Create new MoquiTraining record-->
+<!--    The API request to create a new record should be able to input all fields of the entity in the request body, and return trainingId.-->
+
+    <resource name="API1" require-authentication="anonymous-all">
+        <method type="post" require-authentication="anonymous-all">
+            <service name="moqui.training.MoquiTrainingServices.create#MoquiTraining"/>
+        </method>
+<!--        Get all MoquiTraining records-->
+<!--        The API request should return the list of all records with all the fields.-->
+        <resource name="Assignment6-2a">
+            <method type="get" require-authentication="anonymous-all">
+                <entity name="MoquiTraining" operation="list"/>
+            </method>
+        </resource>
+<!--        The API request should return the list of all records with information only about training id, name and price fields.-->
+        <resource name="Assignment6-2b">
+            <method type="get" require-authentication="anonymous-all">
+                <service name="moqui.training.MoquiTrainingServices.get#TrainingRecords"/>
+            </method>
+        </resource>
+        <resource name="Assignment6-3">
+            <method type="get">
+                <service name="moqui.training.MoquiTrainingServices.get#TrainingRecordById"/>
+            </method>
+        </resource>
+        <resource name="Assignment6-4">
+            <method type="patch">
+                <service name="moqui.training.MoquiTrainingServices.get#CreateUpdateTraining"/>
+            </method>
+        </resource>
+        <resource name="Assignment6-5">
+            <method type="delete">
+                <entity name="MoquiTraining" operation="delete"/>
+            </method>
+        </resource>
+    </resource>
+    
+</resource>
